@@ -9,7 +9,13 @@ const useDarkMode = (key, value) => {
     let body = document.querySelector("body");
     body.classList.remove("dark-mode");
   }
-  return [darkMode, setDarkMode];
+
+  const toggleMode = (e) => {
+    e.preventDefault();
+    setDarkMode(!darkMode);
+  };
+
+  return [darkMode, setDarkMode, toggleMode];
 };
 
 export default useDarkMode;
